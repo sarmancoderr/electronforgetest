@@ -1,6 +1,19 @@
+require('dotenv').config();
 module.exports = {
   packagerConfig: {},
   rebuildConfig: {},
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'sarmancoderr',
+          name: 'electronforgetest'
+        },
+        prerelease: true
+      }
+    }
+  ],
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
